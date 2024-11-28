@@ -1,0 +1,22 @@
+/* update-user-form.component.css */
+form {
+    display: flex;
+    flex-direction: column;  /* Elemanları dikeyde hizala */
+    gap: 10px;               /* Elemanlar arasında 10px boşluk */
+    max-width: 400px;        /* Formun maksimum genişliğini ayarla */
+    margin: 0 auto;          /* Formu ortala */
+  }
+  
+  label {
+    font-weight: bold;       /* Etiketleri belirgin yap */
+  }
+  
+  input {
+    width: 100%;             /* Input alanlarının genişliğini %100 yap */
+    padding: 8px;            /* Inputlara iç boşluk ver */
+    box-sizing: border-box;   /* Padding dahil genişliği ayarla */
+  }
+  
+  button {
+    margin-right: 10px;      /* Butonlar arasında sağ boşluk ver */
+  }

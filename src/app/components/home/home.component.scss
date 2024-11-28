@@ -1,0 +1,7 @@
+.content{
+  margin-top: 50px; /* Navbar yüksekliğine göre ayarlayın */
+  margin-left: 270px; /* Sidebar genişliği + boşluk */
+  padding: 10px;
+  height: calc(100vh - 50px); /* Navbar yüksekliğini çıkartın */
+  overflow-y: auto; /* Taşma durumunda kaydırma çubuğu */
+}

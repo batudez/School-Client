@@ -1,0 +1,15 @@
+<section>
+    <div *ngFor="let item of courses" class="example-button-row">
+      <button mat-raised-button (click)="getNotesList(item.id)">{{item.courseCode}} - {{item.courseName}}</button>
+    </div>
+  </section>
+
+  <div class="student-list">
+    <div *ngFor="let student of students; let i = index" class="student-item">
+      <span class="student-name">{{ student.student.nameSurname }}</span>
+      <span class="student-name">{{ student.studentId }}</span>
+      <input type="number" [(ngModel)]="student.grade" placeholder="enter-grade" class="grade-input" />
+    </div>
+  </div>
+
+  <button (click)="saveGrades(courseIdd)">Save Grades</button>

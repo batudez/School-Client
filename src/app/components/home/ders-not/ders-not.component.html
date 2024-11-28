@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="notes" class="mat-elevation-z8 demo-table">
+  <!-- Position Column -->
+  <ng-container matColumnDef="demo-position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="ders-kodu">
+    <th mat-header-cell *matHeaderCellDef> Ders Kodu </th>
+    <td mat-cell *matCellDef="let note"> {{note.course.courseCode}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="note">
+    <th mat-header-cell *matHeaderCellDef> Note </th>
+    <td mat-cell *matCellDef="let note"> {{note.value}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="student-id">
+    <th mat-header-cell *matHeaderCellDef> Ogrenci Id </th>
+    <td mat-cell *matCellDef="let note"> {{note.studentId}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div class="example-button-container">
+  <button mat-fab extended (click)="exportToPdf()">
+    Convert to Pdf
+  </button>
+</div>

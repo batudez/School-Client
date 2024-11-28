@@ -1,0 +1,34 @@
+<!-- update-user-form.component.html -->
+<h2>Kullanıcı Bilgilerini Güncelle</h2>
+
+<form (ngSubmit)="onSave()" style="display: flex; flex-direction: column; gap: 10px;">
+  <div>
+    <label for="name">Isim Soyisim : </label>
+    <input id="name" [(ngModel)]="data.nameSurname" name="name" required />
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="data.email" name="email" required type="email" />
+  </div>
+
+  <div>
+    <label >Telephone Number:</label>
+    <input id="telephoneNumber" [(ngModel)]="data.telephoneNumber" name="telephoneNumber" />
+  </div>
+
+  <div>
+    <label>Address:</label>
+    <input id="address" [(ngModel)]="data.address" name="address" />
+  </div>
+
+  <div>
+    <label >ImageUrl:</label>
+    <input id="ImageUrl" [(ngModel)]="data.imageUrl" name="imageUrl" />
+  </div>
+
+  <div>
+    <button type="submit">Kaydet</button>
+    <button type="button" (click)="onCancel()">İptal</button>
+  </div>
+</form>

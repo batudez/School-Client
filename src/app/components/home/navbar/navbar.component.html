@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">SCHOOL</div>
+    <ul class="nav-links">
+        <button (click)="quit()"><li><a>Çıkış Yap</a></li> </button>
+        <li><a>Ayarlar</a></li> 
+        <li><a routerLink="/home/userSettings">{{ user?.nameSurname }}</a></li> 
+        
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,71 @@
+<!-- <div class="login-box">
+    <div>
+        <h1>SCHOOL</h1>
+        <p>Online education system</p>
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+          <div class="textbox">
+            <input type="text" placeholder="Email" formControlName="email">
+          </div>
+          <div class="textbox">
+            <input type="password" placeholder="Password" formControlName="password">
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <div *ngIf="errorMessage" class="error-message" style="color: red; font-size: 14px;">
+          {{ errorMessage }}
+        </div>
+      </div>
+    <button class="btn" [routerLink]="['/register']" routerLinkActive="router-link-active" >Do you want to register ?</button>
+    </div>
+        -->
+
+
+        <div class="login-box">
+          <div>
+            <h1>SCHOOL</h1>
+            <p>Online education system</p>
+        
+            <!-- Instructor ve Student Seçim Butonları -->
+            <div class="button-group">
+              <button (click)="setLoginType('instructor')" [class.active]="loginType === 'instructor'">Instructor</button>
+              <button (click)="setLoginType('student')" [class.active]="loginType === 'student'">Student</button>
+            </div>
+        
+            <h2>{{ loginType | titlecase }} Login</h2>
+        
+            <!-- Instructor Login Form -->
+            <form *ngIf="loginType === 'instructor'" [formGroup]="instructorLoginForm" (ngSubmit)="onSubmit(instructorLoginForm.value)">
+              <div class="textbox">
+                <input type="text" placeholder="Instructor Email" formControlName="email">
+              </div>
+              <div class="textbox">
+                <input type="password" placeholder="Instructor Password" formControlName="password">
+              </div>
+              <button type="submit" class="submit-btn">Login as Instructor</button>
+            </form>
+        
+            <!-- Student Login Form -->
+            <form *ngIf="loginType === 'student'" [formGroup]="studentLoginForm" (ngSubmit)="onSubmit(studentLoginForm.value)">
+              <div class="textbox">
+                <input type="text" placeholder="Student Email" formControlName="email">
+              </div>
+              <div class="textbox">
+                <input type="password" placeholder="Student Password" formControlName="password">
+              </div>
+              <button type="submit" class="submit-btn">Login as Student</button>
+            </form>
+        
+            <!-- Hata Mesajı -->
+            <div *ngIf="errorMessage" class="error-message">
+              {{ errorMessage }}
+            </div>
+          </div>
+        
+          <div class="button-group">
+            <button class="register-btn" [routerLink]="['/register']" routerLinkActive="router-link-active">Do you want to register ?</button>
+          </div>
+          
+        </div>
+        
+        

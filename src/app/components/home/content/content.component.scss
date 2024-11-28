@@ -1,0 +1,8 @@
+.content {
+    margin-top: 50px; /* Navbar yüksekliği kadar bir boşluk bırakın */
+    margin-left: 250px; /* Sidebar genişliği kadar boşluk bırak */
+    padding: 20px; /* İçerik alanına biraz boşluk ekleyin */
+    background-color: #f9f9f9; /* İçerik alanı için arka plan rengi */
+    height: calc(100vh - 50px); /* Tam yükseklik ayarlaması */
+    overflow-y: auto; /* İçerik taşarsa kaydırma çubuğu ekleyin */
+}
