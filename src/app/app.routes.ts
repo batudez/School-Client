@@ -12,20 +12,19 @@ import { RegisterComponent } from './components/register/register.component';
 import { homeGuard } from './guard/home.guard';
 
 export const routes: Routes = [
-    {path : "",redirectTo : "/login",pathMatch:'full'},
-    {path : "home",component : HomeComponent,canActivate:[homeGuard], children:[
-        {path : "akademikTakvim",component : AkademikTakvimComponent},
-        {path : "notes",component : DersNotComponent},
-        {path : "alinanDersler",component : AlinanDerslerComponent},
-        {path : "transkript",component : TranskriptComponent},
-        {path : "duyurular",component : AnnouncementComponent},
-        {path : "notGiris",component : NotGirisComponent},
-        {path : "userSettings",component : UsersettingsComponent},
+    { path: "", redirectTo: "/login", pathMatch: 'full' },
+    {
+        path: "home", component: HomeComponent, canActivate: [homeGuard], children: [
+            { path: "akademikTakvim", component: AkademikTakvimComponent },
+            { path: "notes", component: DersNotComponent },
+            { path: "alinanDersler", component: AlinanDerslerComponent },
+            { path: "transkript", component: TranskriptComponent },
+            { path: "duyurular", component: AnnouncementComponent },
+            { path: "notGiris", component: NotGirisComponent },
+            { path: "userSettings", component: UsersettingsComponent },
 
-    ]},
-
-    {path : "register",component : RegisterComponent},
-    {path : "login",component : LoginComponent},
-    
-    
+        ]
+    },
+    { path: "register", component: RegisterComponent },
+    { path: "login", component: LoginComponent },
 ];

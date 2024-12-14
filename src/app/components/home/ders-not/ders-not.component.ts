@@ -26,14 +26,16 @@ export class DersNotComponent implements OnInit {
   courseCode: string;
   courseName: string;
   constructor(private noteService: NoteService,
-              private signalRService : SignalrService
-  ) { 
+    private signalRService: SignalrService
+  ) {
     signalRService.start(HubUrls.NoteHub);
   }
 
   ngOnInit(): void {
     this.getStudentItems();
-    this.signalRService.on(ReceiveFunctions.NoteUpdatedMessageReceiveFunction,message => {
+    this.signalRService.on(ReceiveFunctions.NoteUpdatedMessageReceiveFunction, message => {
+      this.notes = [];
+      this.getStudentItems();
       alert(message);
     })
 
@@ -50,13 +52,10 @@ export class DersNotComponent implements OnInit {
   }
 
   getStudentItems() {
-
     this.studentId = localStorage.getItem('studentId');
     this.noteService.getNotesByStudentId(this.studentId).subscribe((data) => {
       this.notes = data.items.$values;
       console.log(this.notes);
-
-
     })
   }
 

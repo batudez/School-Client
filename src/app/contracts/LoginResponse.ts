@@ -5,4 +5,5 @@ export class LoginResponse {
     email : string;
     accessToken : AccessToken;
     requiredAuthenticatorType : boolean;
+    schoolId : string;
 }
